@@ -1,8 +1,3 @@
----
-hide:
-  - navigation
----
-
 # Bem vindo
 
 Aqui você encontra todas as informações necessárias para se conectar com nossos sistemas.
