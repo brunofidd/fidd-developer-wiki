@@ -11,7 +11,7 @@ Aqui você encontra informações de como de integrar com o Veredas.
 
 ## Documentação 
 
-<swagger-ui src="https://apipreprod.veredashomol.fiddgroup.com/swagger/v1.0-internal/swagger.json" validatorUrl="none"/>
+<swagger-ui src="https://apipreprod.veredashomol.fiddgroup.com/swagger/v1.0-external/swagger.json" validatorUrl="none"/>
 
 ## Passo a Passo
  
