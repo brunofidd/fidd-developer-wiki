@@ -1,4 +1,4 @@
-# Começando
+# CNAB
 
 ## Laiautes
 
@@ -50,7 +50,10 @@ Os layouts de CNAB utilizados pela FIDD são: layout CNAB500 e CNAB444.
 ## Tipos de Movimento
 
 Os Tipos de Movimento no CNAB são chamados de identificação da ocorrência, também conhecida como "código de ocorrência", é um campo utilizado no layout do arquivo CNAB para indicar um código que determina o tipo de movimento que esse título terá dentro do sistema.
+
 > O código da ocorrência / código do movimento (atrelado via sistema), determina qual o tipo de processamento determinado título irá ter ao dar entrada no sistema.
+
+- Deve ser inserido nas posições 109 a 110 do arquivo CNAB.
  
 Exemplos:
 
@@ -66,6 +69,37 @@ Exemplos:
 |99|Reativação|Aciona a ativação de determinado título que esteja inativado.|
 
 Para outros tipos de movimento consulte o [Suporte FIDD](mailto:nicolas.schmidt@fiddgroup.com).
+
+## Espécie de Título	
+
+A **espécie de título** utilizada no **CNAB** é um código numérico que representa a natureza do título.
+
+>Dentro do CNAB, a espécie de título se refere a uma classificação específica para identificar o tipo do recebível que está sendo apresentado para processamento. Cada recebível pode possuir sua particularidade. Em todos tipos de movimento é essencial a informação da espécie de título.
+
+- Deve ser inserido nas posições 148 a 149 do arquivo CNAB.
+
+Exemplos:
+
+|Código|Espécie|
+|----------------|-------------------------------|
+|01|Duplicata|
+|02|Nota Promissória|
+|13|Precatório|
+|14|Duplicata de Serviço Fisico|
+|15|Cotas de Consórcio|
+|21|Renegociação de Dívida|
+|24|Nota Comercial|
+|25|Acordo Judicial|
+|41|CCB Digital|
+|51|Cheque|
+|55|Termo de Investimento|
+|60|Contrato|
+|61|Contrato Físico|
+|62|Confissão de Dívida|
+|67|Operação Cartão de Crédito|
+
+Para mais espécies de título, consulte o [Suporte FIDD](mailto:nicolas.schmidt@fiddgroup.com).
+
 
 ## Código do Originador
 Os **Originadores** são a Entidade que **origina as cessões** dentro do Fromtis.
@@ -88,7 +122,7 @@ Serviço de **Importação Arquivo CNAB** - Realiza a importação de CNAB para 
 - https://fidc.fiddgroup.com/portal/portal-servicos/servicos/soap/importacaoArquivoCnab?wsdl
 
 Exemplo do Request:
-
+	
     <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" 
     xmlns:soap="http://soap.consulta.servicos.portal.fidc.fromtis.com.br/">
      <soapenv:Header/>
@@ -122,14 +156,24 @@ Exemplo do Response:
 >*Serviço de **Importação Arquivo Remessa** - Realiza a importação de CNAB para o sistema.*
 >*https://fidc.fiddgroup.com/portal/portal-servicos/servicos/soap/importacaoArquivoRemessa?wsdl*
 
+*Outros Serviços*
+
 Serviço de **Relatório de Estoque** - Realiza o agendamento do relatório de Estoque.
-- https://fidc.fiddgroup.com/portal/portal-servicos/servicos/soap/agendador/relatorioEstoque?wsdl
-> Request para gerar um id de agendamento do relatório de estoque.
+https://fidc.fiddgroup.com/portal/portal-servicos/servicos/soap/agendador/relatorioEstoque?wsdl
 
 Serviço de **Consulta de Relatório** - Realiza uma consulta de determinado relatório agendado.
-- https://fidc.fiddgroup.com/portal/portal-servicos/servicos/soap/agendador/consultarRelatorio?wsdl
-> Request para consultar o id de agendamento gerado do relatório.
+https://fidc.fiddgroup.com/portal/portal-servicos/servicos/soap/agendador/consultarRelatorio?wsdl
 
 Serviço de **Relatório Liquidados/Aquisição** - Realiza o agendamento do relatório de liquidação/aquisição.
-- https://fidc.fiddgroup.com/portal/portal-servicos/servicos/soap/agendador/relatorioAquisicaoLiquidados?wsdl
-> Request para gerar um id de agendamento do relatório de liquidados/aquisição. Para consultar utilize o request consultarRelatorio.
+https://fidc.fiddgroup.com/portal/portal-servicos/servicos/soap/agendador/relatorioAquisicaoLiquidados?wsdl
+
+
+## Ambientes
+
+
+| Enviroment | URL                                    |
+|:-----------:|:----------------------------------------:|
+|Produção   | https://fidc.fiddgroup.com/portal/login     |
+|Homologação | https://fidchomol.fiddgroup.com/portal/login |
+
+> Portal FIDC - Fromtis
